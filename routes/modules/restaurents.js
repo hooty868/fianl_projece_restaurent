@@ -53,9 +53,10 @@ router.post('/', (req, res) => {
   const description = req.body.description
   const image = req.body.image
   const rating = req.body.rating
+  const google_map = req.body.rating.google_map
   restaurantList.countDocuments({ type: Number }, function (_err, count) {
     const id = count + 1
-    return restaurantList.create({ name, category, location, phone, description, image, rating, id })// 存入資料庫
+    return restaurantList.create({ name, category, location, phone, description, image, rating, id, google_map })// 存入資料庫
       .then(() => res.redirect('/')) // 新增完成後導回首頁
       .catch(error => console.log(error))
   })
