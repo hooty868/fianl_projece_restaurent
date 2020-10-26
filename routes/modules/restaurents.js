@@ -54,7 +54,15 @@ router.post('/', (req, res) => {
   const image = req.body.image
   const rating = req.body.rating
   const google_map = req.body.rating.google_map
-  restaurantList.countDocuments({ type: Number }, function (_err, count) {
+  // debug for rating start
+  if (typeof rating !== 'number') {
+    return new TypeError('rating type is not number', 'restaurents.js', 59)
+  }
+  if (rating < 1 && rating > 5) {
+    return new RangeError('rating is not in 1~5 range')
+  }
+  // debug for rating end
+  restaurantList.countDocuments({ type: Number }, function (_err, count) { // callback寫法
     const id = count + 1
     return restaurantList.create({ name, category, location, phone, description, image, rating, id, google_map })// 存入資料庫
       .then(() => res.redirect('/')) // 新增完成後導回首頁
