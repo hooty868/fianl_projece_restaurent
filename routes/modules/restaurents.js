@@ -91,10 +91,32 @@ router.get('/:id/edit', (req, res) => {
 // renew edit restaurant post
 router.put('/:id', (req, res) => {
   const id = req.params.id
-  const info = req.body
+  const name = req.body.name
+  const category = req.body.category
+  const location = req.body.location
+  const phone = req.body.phone
+  const description = req.body.description
+  const image = req.body.image
+  const rating = Number(req.body.rating)
+  // debug for rating start
+  if (typeof rating !== 'number') {
+    return new TypeError('rating type is not number', 'app.hs', 100)
+  }
+  if (rating < 1 && rating > 5) {
+    return new RangeError('rating is not in 1~5 range')
+  }
+  // debug for rating end
+  const google_map = req.body.google_map
   return restaurantList.findById(id)
     .then(restaurant => {
-      restaurant = Object.assign(restaurant, info)
+      restaurant.name = name
+      restaurant.category = category
+      restaurant.location = location
+      restaurant.phone = phone
+      restaurant.description = description
+      restaurant.image = image
+      restaurant.rating = rating
+      restaurant.google_map = google_map
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
