@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-// let listlength = 0 // 為了引入id先把資料物件陣列長度算出，則加入新的在＋1就好
 const restaurantList = require('../../models/resList')
 
 router.get('/new', (req, res) => {
@@ -9,22 +8,6 @@ router.get('/new', (req, res) => {
 
 router.get('/login', (req, res) => {
   return res.render('login')
-})
-
-router.get('/sortrataioRaising', (req, res) => {
-  restaurantList.find() // 取出 Todo model 裡的所有資料
-    .sort({ rating: 1 })
-    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
-    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
-    .catch(error => console.error(error)) // 錯誤處理
-})
-
-router.get('/sortrataioDescending', (req, res) => {
-  restaurantList.find() // 取出 Todo model 裡的所有資料
-    .sort({ rating: -1 })
-    .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
-    .then(restaurants => res.render('index', { restaurants })) // 將資料傳給 index 樣板
-    .catch(error => console.error(error)) // 錯誤處理
 })
 
 // search specific restaurant post

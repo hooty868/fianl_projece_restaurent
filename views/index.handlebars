@@ -20,13 +20,17 @@
 
     <div class="col text-center">
       <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           排序
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="/restaurants/sortrataioRaising">評分由低到高</a>
-          <a class="dropdown-item" href="/restaurants/sortrataioDescending">評分由高到低</a>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/sort/name/asc">店名：正序</a>
+          <a class="dropdown-item" href="/sort/name/desc">店名：反序</a>
+          <a class="dropdown-item" href="/sort/category/asc">類別：正序</a>
+          <a class="dropdown-item" href="/sort/category/desc">類別：反序</a>
+          <a class="dropdown-item" href="/sort/rating/descending">評分：由高至低</a>
+          <a class="dropdown-item" href="/sort/rating/ascending">評分：由低至高</a>
         </div>
       </div>
     </div>
