@@ -4,7 +4,7 @@
 近期在新增：登入帳號密碼畫面，及驗證帳密功能
 
 ## 畫面截圖
-![首頁](https://github.com/hooty868/git-remote-mac/raw/master/resturentList/public/image_screenshot/4.0type.png)
+![首頁](https://github.com/hooty868/fianl_projece_restaurent/blob/main/public/image_screenshot/4.0type.png)
 
 
 ## Features - 產品功能
