@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
+// const querystring = require('querystring');
 
 const restaurantList = require('../../models/resList')
 
-router.get('/:type/:method', (req, res) => {
-  const type = req.params.type
-  const method = req.params.method
+router.get('/', (req, res) => {
+  const type = req.query.by
+  const method = req.query.orderBy
   restaurantList.find()
     .lean()
     .sort({ [type]: method })

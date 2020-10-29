@@ -25,12 +25,12 @@
           排序
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/sort/name/asc">店名：正序</a>
-          <a class="dropdown-item" href="/sort/name/desc">店名：反序</a>
-          <a class="dropdown-item" href="/sort/category/asc">類別：正序</a>
-          <a class="dropdown-item" href="/sort/category/desc">類別：反序</a>
-          <a class="dropdown-item" href="/sort/rating/descending">評分：由高至低</a>
-          <a class="dropdown-item" href="/sort/rating/ascending">評分：由低至高</a>
+          <a class="dropdown-item" href="/sort?by=name&orderBy=asc">店名：正序</a>
+          <a class="dropdown-item" href="/sort?by=name&orderBy=desc">店名：反序</a>
+          <a class="dropdown-item" href="/sort?by=category&orderBy=asc">類別：正序</a>
+          <a class="dropdown-item" href="/sort?by=category&orderBy=desc">類別：反序</a>
+          <a class="dropdown-item" href="/sort?by=rating&orderBy=descending">評分：由高至低</a>
+          <a class="dropdown-item" href="/sort?by=rating&orderBy=ascending">評分：由低至高</a>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="mw-100 btn-group" role="group" aria-label="Basic example">
               <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-item-center">
                   <div class="col-4">
                     <button type="button" class="btn btn-outline-secondary">
                       <a href="/restaurants/{{ this._id }}/edit" class="text-secondary">
