@@ -83,7 +83,7 @@ router.put('/:id', (req, res) => {
   const rating = Number(req.body.rating)
   // debug for rating start
   if (typeof rating !== 'number') {
-    return new TypeError('rating type is not number', 'app.hs', 100)
+    return new TypeError('rating type is not number', 'app.js', 100)
   }
   if (rating < 1 && rating > 5) {
     return new RangeError('rating is not in 1~5 range')
